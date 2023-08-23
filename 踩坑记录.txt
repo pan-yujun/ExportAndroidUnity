@@ -1,0 +1,12 @@
+ExportAndroidUnity
+1.记录将Unity工程导出为Android工程
+2.接入参考：https://blog.csdn.net/u014361280/article/details/91888091
+3.踩坑记录
+	1.Unity中项目设置先切换为android平台，勾选Export选项，点击导出
+	2.新建android工程，包名需和Unity工程包名一致
+	3.新建android工程，工程模板选Empty Views Activity，开发语言选java
+	4.将Unity包名导入后，需右键，点击as library
+	5.需找到UnityPlayerActivity.java手动导入，【https://tieba.baidu.com/p/6733090597】
+	6.android提示Cannot resolve symbol 'UnityPlayer'，操作Build -> Clean Project，Tools -> Android -> Sync Project With Gradle Files 【https://blog.csdn.net/Sinkmaple/article/details/124646459】
+	7.android 提示android.content.res.Resources$NotFoundException: String resource ID #0x0，操作在string.xml中添加<string name="game_view_content_description"></string> 【https://blog.csdn.net/qq_28934205/article/details/118015703】
+	8.GitToritoiseGit操作init：右键>git在这里创建版本库，注意：推送之后分mian和master分支
